@@ -4,16 +4,14 @@ API HTTP construida con **FastAPI** que expone el modelo pre-entrenado
 [`facebook/bart-large-cnn`](https://huggingface.co/facebook/bart-large-cnn)
 (Hugging Face Transformers) para **resumen automático de texto**.
 
-> Tarea del curso *Entrenamiento práctico en Ciencia de Datos* — Opción B
-> (modelo pre-entrenado no cubierto en clase).
 
 ## Qué predice el modelo
 
 `bart-large-cnn` es un modelo *seq2seq* afinado sobre el dataset CNN/DailyMail.
-Recibe un texto (idealmente en **inglés**) y genera un **resumen abstractivo**
-más corto que conserva las ideas principales.
+Recibe un texto (en **inglés**) y genera un **resumen abstractivo**
+más corto que conserva ideas principales.
 
-## Requisitos cumplidos
+## Requerimientos
 
 | Requisito | Implementación |
 |---|---|
@@ -38,9 +36,9 @@ ml-web-service/
 └── README.md
 ```
 
-## Cómo correr la API localmente
+## Cómo correr API localmente
 
-Requiere **Python 3.11**. En Apple Silicon usa automáticamente la GPU (MPS).
+Requiere **Python 3.11**.
 
 ```bash
 # 1. Crear entorno virtual e instalar dependencias
@@ -101,8 +99,8 @@ curl -X POST http://127.0.0.1:8000/predict \
 }
 ```
 
-> La primera inferencia es más lenta (~5 s) por el *warmup* de MPS; las
-> siguientes bajan a ~1–1.5 s.
+> La primera inferencia es más lenta (~3 s) por el *warmup* de MPS; las
+> siguientes bajan a ~0.5–1.5 s.
 
 ### Parámetros opcionales del resumen
 
