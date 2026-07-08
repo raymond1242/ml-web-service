@@ -4,6 +4,8 @@ API HTTP construida con **FastAPI** que expone el modelo pre-entrenado
 [`facebook/bart-large-cnn`](https://huggingface.co/facebook/bart-large-cnn)
 (Hugging Face Transformers) para **resumen automático de texto**.
 
+**Repositorio:** https://github.com/raymond1242/ml-web-service
+
 
 ## Qué predice el modelo
 
@@ -41,12 +43,16 @@ ml-web-service/
 Requiere **Python 3.11**.
 
 ```bash
-# 1. Crear entorno virtual e instalar dependencias
+# 1. Clonar el repositorio
+git clone https://github.com/raymond1242/ml-web-service.git
+cd ml-web-service
+
+# 2. Crear entorno virtual e instalar dependencias
 python3.11 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 
-# 2. Levantar el servidor (la primera vez descarga el modelo, ~1.6 GB)
+# 3. Levantar el servidor (la primera vez descarga el modelo, ~1.6 GB)
 uvicorn app.main:app --host 127.0.0.1 --port 8000
 ```
 
